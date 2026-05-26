@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/tasks")
 public class TaskController {
@@ -21,14 +23,10 @@ public class TaskController {
     }
 
     @GetMapping
-    public String getTasks(Model model) {
-
-        // TODO:
-        // 1. Retrieve all tasks from the service
-        // 2. Add them to the model
-        // 3. Return the Thymeleaf view name
-
-        return "";
+    public String listTasks(Model model) {           // Step 1: add Model parameter
+        List<Task> tasks = taskService.findAll();     // Step 2: fetch all tasks
+        model.addAttribute("tasks", tasks);          // Step 3: put in model under key "tasks"
+        return "tasks/list";                         // Step 4: return the view name
     }
 
     @GetMapping("/new")
