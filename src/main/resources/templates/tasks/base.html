@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Board</title>
+    <!--
+        TODO Block 2: Add Bootstrap 5 CDN <link> and <script>
+        TODO Block 2: <link rel="stylesheet" th:href="@{/css/app.css}">
+        TODO Block 2: Build nav bar with th:href links
+        TODO Block 2: Add th:fragment="content" div inside <main>
+    -->
+</head>
+<body>
+<nav>
+    <a href="/tasks">Task Board</a>
+    <a href="/tasks/new">New Task</a>
+</nav>
+<main>
+    <div th:fragment="content">
+        <!-- Individual page content replaces this div -->
+    </div>
+</main>
+</body>
+</html>
