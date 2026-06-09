@@ -11,12 +11,12 @@
 
 
 
-<!-- ── Empty state: shown only when the tasks list is empty ──────── -->
+<!--  Empty state: shown only when the tasks list is empty  -->
 <p th:if="${#lists.isEmpty(tasks)}">
     No tasks yet. <a th:href="@{/tasks/new}">Create your first task.</a>
 </p>
 
-<!-- ── Task table: shown only when tasks exist ───────────────────── -->
+<!--  Task table: shown only when tasks exist  -->
 <table th:unless="${#lists.isEmpty(tasks)}" border="1" cellpadding="8">
     <thead>
     <tr>
